@@ -1,0 +1,59 @@
+<!-- same height depending on the screen size -->
+<script>
+
+window.addEventListener("load", setSameHeight);
+window.addEventListener("resize", setSameHeight);
+
+function setSameHeight() {
+    const divs = document.querySelectorAll(".same-height-container-menu");
+    let maxHeight = 0;
+
+    // Reset height to auto to recalculate the height properly on resize
+    divs.forEach(div => div.style.height = "auto");
+
+    // Find the max height of the divs
+    divs.forEach(div => {
+        const divHeight = div.offsetHeight;
+        if (divHeight > maxHeight) {
+            maxHeight = divHeight;
+        }
+    });
+
+    // Apply the max height to both divs
+    divs.forEach(div => div.style.height = maxHeight + "px");
+}
+
+</script>
+
+
+/* if you want only for min scren size */
+<script>
+window.addEventListener("load", setSameHeight);
+window.addEventListener("resize", setSameHeight);
+
+function setSameHeight() {
+    const minWidth = 769;
+    const divs = document.querySelectorAll(".same-height-container-menu");
+
+    if (window.innerWidth >= minWidth) {
+        let maxHeight = 0;
+
+        // Reset height to auto to recalculate properly on resize
+        divs.forEach(div => div.style.height = "auto");
+
+        // Find the maximum height of the divs
+        divs.forEach(div => {
+            const divHeight = div.offsetHeight;
+            if (divHeight > maxHeight) {
+                maxHeight = divHeight;
+            }
+        });
+
+        // Apply the max height to all divs
+        divs.forEach(div => div.style.height = maxHeight + "px");
+    } else {
+        // Reset height if below min-width
+        divs.forEach(div => div.style.height = "auto");
+    }
+}
+</script>
