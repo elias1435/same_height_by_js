@@ -1,7 +1,6 @@
 /* Note 'box-text' is class here
 here used 769px for min width media query */
 
-
 document.addEventListener("DOMContentLoaded", function() {
 // Check if the screen width is at least 769 pixels
 if (window.matchMedia("(min-width: 769px)").matches) {
