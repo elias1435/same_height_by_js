@@ -1,4 +1,7 @@
-<!-- same height depending on the screen size -->
+<!-- same height depending on the screen size
+just change the class ".same-height-container-menu"
+and you are done :)
+-->
 <script>
 
 window.addEventListener("load", setSameHeight);
